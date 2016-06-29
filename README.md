@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Google Drought
 
 Code repository for the Google Drought web interface and tool under development by the Desert Research Institute, Google, and the University of Idaho.
@@ -96,3 +97,6 @@ You can find the most up-to-date deployments [here] (http://drought-monitor.apps
 		- datatab.html (html file for the DATA tab on webpage)
 		- figuretab.html (html file for the FIGURE tab on webpage)
 
+=======
+# nevadaet
+>>>>>>> 1124a6637e2232a94df7a7de3d79adcbfd5de3eb
