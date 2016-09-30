@@ -91,6 +91,10 @@ def get_images(template_values):
         frequency='monthly'
     collection, coll_name, coll_desc, var_desc, notes = collectionMethods.get_collection(
         product, var, model, scenario, frequency,logger=logger)
+    #if product =='NVET':
+     #   frequency='yearly'
+    #collection, coll_name, coll_desc, notes = collectionMethods.get_collection(
+    #    product, var, model, scenario, frequency,logger=logger)      
 
     #==============
     #Calculation:Values,Climatology,Anomalies
@@ -175,7 +179,7 @@ def get_images(template_values):
     vis_image = calc_img.clamp(float(minColorbar), float(maxColorbar))
 
     #we could change this to just if var in ['TrueColor', 'FalseColor'] instead of all the products
-    if (product in ['L_TOA', 'L5_TOA', 'L7_TOA', 'L8_TOA', 'L_SR', 'L5_SR', 'L7_SR', 'L8_SR'] and
+    if (product in ['L_TOA', 'L5_TOA', 'L7_TOA', 'L8_TOA', 'L_SR', 'L5_SR', 'L7_SR', 'L8_SR', 'NVET'] and
         var in ['TrueColor', 'FalseColor']):
         ## Hard code display of multi-band Landsat images (for now)
         ## Intentionally not using "vis_image" here to avoid clamp (for now)

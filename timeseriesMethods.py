@@ -691,7 +691,7 @@ def daily_worker(collection,shape,shape_type,dynamic_scale,start,end,product,var
         c = collection.filterDate(s, e).filterBounds(shape)
         #FIX ME: Weirdess in CFSV2 dates
         if product == 'CSFV2':
-            e = e.advance(-1,'day')
+            e = e.advance(-1,'days')
         feats = ee.FeatureCollection(c.map(average_over_region))
         #Sometimes the getInfo calls fail sporadically
         for i in range(2):
@@ -706,6 +706,7 @@ def daily_worker(collection,shape,shape_type,dynamic_scale,start,end,product,var
                     logger.info('RETRYING REQUETS')
                 continue
         threadData[shape_idx].append(f_data)
+	#logger.info(f_data)
 
 def start_threads(thread_vars, time_vars, logger):
     '''

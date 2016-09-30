@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Google Drought
 
 Code repository for the Google Drought web interface and tool under development by the Desert Research Institute, Google, and the University of Idaho.
@@ -20,10 +21,10 @@ You can find the most up-to-date deployments [here] (http://drought-monitor.apps
 	- `git clone https://github.com/Google-Drought/WebInterface directory_name`
 	- `git remote rename original-name new-name`
 	- Make symbolic links to Anaconda environment packages:
-		- `ln -s $HOME/anaconda/envs/ee-python/lib/python2.7/site-packages/ee ee`
-		- `ln -s $HOME/anaconda/envs/ee-python/lib/python2.7/site-packages/oauth2client/ oauth2client`
-		- `ln -s $HOME/anaconda/envs/ee-python/lib/python2.7/site-packages/six.py six.py`
-		- `ln -s $HOME/anaconda/envs/ee-python/lib/python2.7/site-packages/httplib2 httplib2`
+		- `ln -s $HOME/anaconda2/envs/ee-python/lib/python2.7/site-packages/ee ee`
+		- `ln -s $HOME/anaconda2/envs/ee-python/lib/python2.7/site-packages/oauth2client/ oauth2client`
+		- `ln -s $HOME/anaconda2/envs/ee-python/lib/python2.7/site-packages/six.py six.py`
+		- `ln -s $HOME/anaconda2/envs/ee-python/lib/python2.7/site-packages/httplib2 httplib2`
 	- Make symbolic link to private key:
 		- `ln -s ~/.keys/privatekey.pem`
 	- Set Developer information:
@@ -100,3 +101,6 @@ You can find the most up-to-date deployments [here] (http://drought-monitor.apps
 =======
 # nevadaet
 >>>>>>> 1124a6637e2232a94df7a7de3d79adcbfd5de3eb
+=======
+# nevadaet
+>>>>>>> f2abd374f1cdf5ac1f460096197eca929f47f81a

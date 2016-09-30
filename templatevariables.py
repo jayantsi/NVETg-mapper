@@ -396,7 +396,9 @@ def set_initial_template_values(self, applicationName):
         'formDownloadRegion':            forms.formDownloadRegion,
         'formFusionTableChoices':        forms.formFusionTableChoices,
         'formProductType':               forms.formProductType,
+	'formProductType1':		 forms.formProductType1,
         'formLayers':                    forms.formLayers,
+        #'formLayers1':                   forms.formLayers1,
         'formBoolean':                   forms.formBoolean
     }
     template_values.update(template_forms)
@@ -404,7 +406,7 @@ def set_initial_template_values(self, applicationName):
     #############################################
     ##      EXTRA FEWS                 ##
     #############################################
-    if applicationName=='fewsNet' or applicationName=='nevadaet':
+    if applicationName=='fewsNet':
         extra_FEWS ={
             'formLayers':                formsFEWSNET.formFEWSNETLayers,
             'formFusionTableChoices':    formsFEWSNET.formFusionTableChoicesFEWSNET,

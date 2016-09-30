@@ -17,7 +17,7 @@ import collectionMethods
 #===========================================
 #    STATIC
 #===========================================
-products_Landsat =['L_TOA', 'L5_TOA', 'L7_TOA', 'L8_TOA', 'L_SR', 'L5_SR', 'L7_SR', 'L8_SR']
+products_Landsat =['L_TOA', 'L5_TOA', 'L7_TOA', 'L8_TOA', 'L_SR', 'L5_SR', 'L7_SR', 'L8_SR', 'NVET']
 
 missing_value=-9999
 

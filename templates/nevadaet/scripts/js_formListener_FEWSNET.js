@@ -141,7 +141,7 @@ jQuery('#CHIRPSvariable').on('change',function(){
 	var statistic=splitstring[2];
 	var calculation=splitstring[3];
 
-	if(product=='M' | product=='L_TOA'||product=='L5_TOA' | product=='L7_TOA'| product=='L8_TOA' || product=='L_SR'||product =='L5_SR'||product=='L7_SR'||product=='L8_SR'){
+	if(product=='M' | product=='L_TOA'||product=='L5_TOA' | product=='L7_TOA'| product=='L8_TOA' || product=='L_SR'||product =='L5_SR'||product=='L7_SR'||product=='L8_SR'||product=='NVET'){
 		productType='RS';
 	}else if(product=='CHIRPS' | product=='G'| product=='CFS'){
 		productType ='MET';

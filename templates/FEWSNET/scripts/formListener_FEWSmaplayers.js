@@ -28,15 +28,14 @@ function set_FEWSmapLayers(){
 		/*-------------------*/
               /*       phreats        */
                 /*-------------------*/
-		 if($('input[id=phreatsoverlayer]:checked').val()=="phreatsoverlayer"){
+		/* if($('input[id=phreatsoverlayer]:checked').val()=="phreatsoverlayer"){
                         window.phreatsmarkerOverLayer.setMap(window.map);
          		add_variable_to_share_link('layer','phreatsoverlayer');
 
                 }else{
                         window.phreatsmarkerOverLayer.setMap(null);
         		remove_variable_from_share_link('layer','phreatsoverlayer');
-                };
-
+                }; */
 
  		/*-------------------*/
                 /*       ADMIN 1       */

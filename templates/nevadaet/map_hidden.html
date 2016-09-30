@@ -1,7 +1,7 @@
 <!-- PRODUCT -->
 <div style="display:none">
 	<select id="productType" name="productType" class="productType" style="width:100%">
-		{% for x,y in formProductType %}
+		{% for x,y in formProductType1 %}
 		    <option value="{{ x }}" {% if x == productType  %} selected {% endif %}>{{ y }}</option>
 		{% endfor %}
 	</select>

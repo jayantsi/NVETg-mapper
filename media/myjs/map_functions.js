@@ -410,6 +410,8 @@ function set_mapLayers(){
         window.psasmarkerOverLayer.setMap(null);
         remove_variable_from_share_link('layer','psas');
     };
+
+
     /*-------------------*/
     /*       KML        */
     /*-------------------*/

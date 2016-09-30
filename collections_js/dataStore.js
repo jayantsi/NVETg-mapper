@@ -76,13 +76,32 @@ RSProduct = {
     'L5_SR':'Landsat 5 Surface Reflectance',
     'L7_SR':'Landsat 7 Surface Reflectance',
     'L8_SR':'Landsat 8 Surface Reflectance',
+
+    'NVET':'Nevada ETg Collection',
+
     'M':'MODIS Terra',
     'PFV52':'AVHRR Pathfinder Sea Surface Temperatures',
 };
 
+RSProduct1 = {
+    //'L_TOA':'Landsat 4/5/7/8 Top Of Atmosphere',
+    //'L5_TOA':'Landsat 5 Top Of Atmosphere',
+    //'L7_TOA':'Landsat 7 Top Of Atmosphere',
+    //'L8_TOA':'Landsat 8 Top Of Atmosphere',
+    //'L_SR':'Landsat 4/5/7/8 Surface Reflectance',
+    //'L5_SR':'Landsat 5 Surface Reflectance',
+    //'L7_SR':'Landsat 7 Surface Reflectance',
+    'L8_SR':'Landsat 8 Surface Reflectance',
+
+    'NVET':'Nevada ETg Collection',
+
+    //'M':'MODIS Terra',
+    //'PFV52':'AVHRR Pathfinder Sea Surface Temperatures',
+};
+
 METProduct = {
     'G':'UI METDATA/gridMET',
-    //'CFSV2':'CFS Reanalysis',
+    'CFSV2':'CFS Reanalysis',
     'CHIRPS':'CHIRPS Precipitation',
 };
 
@@ -90,6 +109,11 @@ CLIMProduct = {
     'MACA':'UI MACA Future Climate (CMIP5)',
     'NASANEX':'NASA-NEX Future Climate (CMIP5)'
 };
+
+
+
+
+
 
 //================
 // CALCULATIONS
@@ -187,7 +211,8 @@ var layerKMLs = {
     'countyoverlayer':'http://nimbus.cos.uidaho.edu/DROUGHT/KML/counties_outlined.kmz',
     'hucoverlayer':'http://nimbus.cos.uidaho.edu/DROUGHT/KML/hucs_outlined.kmz',
     'climatedivoverlayer':'http://nimbus.cos.uidaho.edu/DROUGHT/KML/divs_outlined.kmz',
-    'psaoverlayer':'http://nimbus.cos.uidaho.edu/DROUGHT/KML/psa_outlined.kmz'
+    'psasoverlayer':'http://nimbus.cos.uidaho.edu/DROUGHT/KML/psa_outlined.kmz'
+    //'stateoverlayer':'https://www.adrive.com/public/9F5JYQ/america1519kml.kmz'
 };
 
 
@@ -197,13 +222,21 @@ var layerKMLs = {
 //================
 var ftDefaults = {  //fid,cid,column,selectid,styleId,templateId//
     '':['','','',''],
-    'states':['1MC-LjlHxy04aBcxeSB_aVaDo2DlP_y2MVg3p2sxb','Name','California','col2'],
+    'states':['1uRIhNJ8f5ZozeDXyZqqO6vQw7f9HvHqUuXr5fTiz','Name','California','col2'],
     'counties':['1YlY5e3oX-xlxkQnNk799TzO1KeyV4ptIJIr4EZ0v','Name','ID - Latah','col2'],
-    'divisions':['1uH-LD3Jh6IKMTlQs6fBFP2W-_A3eoYevoUKYPJce','Name','LA - CENTRAL','col2'],
-    'psas':['1h3j7BH01bDQCw1YmvyLbLzOQazZR367GpbhTFXu1','Name','Diablo-Santa Cruz Mtns','col2'],
+    'divisions':['1RyzSCTWFpVakuFEnZtPGGfkzqy2Yc-qcqwE8LmZp','Name','LA - CENTRAL','col2'],
+    'psas':['1svWUrpXeW1YAhJ4KqRxXiyNb6WViBbqBiq0I5inm','HYD_AREA_N','Pine Valley','col1'],
+
+    //'statesb':['1uRIhNJ8f5ZozeDXyZqqO6vQw7f9HvHqUuXr5fTiz','Name','California','col2'],
+    //'divisionsb':['1RyzSCTWFpVakuFEnZtPGGfkzqy2Yc-qcqwE8LmZp','Name','ID - Latah','col2'],
+    //'phreats':['1svWUrpXeW1YAhJ4KqRxXiyNb6WViBbqBiq0I5inm','Name','Diablo-Santa Cruz Mtns','col2'],
+
     'polygon':['','',''],
     'custom':['','Name','','col2'],
+    
 }
+
+
 var ftAPIkey = 'AIzaSyBxt1S23U6nn0gDtgTF9OwNmNOhd5TR-sM';
 
 styles_ftOutlines = {
@@ -227,6 +260,18 @@ styles_ftOutlines = {
         'styleId':2 ,
         'templateId':2
     },
+    /*'statesb': {
+	'styleId':2,
+	'templateId':2
+    },
+    'divisionsb': {
+	'styleId':2,
+	'templateId':2
+    },
+    'phreats': {
+	'styleId':2,
+	'templateId':2
+    }, */
 };
 
 styles_ftLayers = {
@@ -246,9 +291,9 @@ styles_ftLayers = {
         'fillOpacity': 0.1
     },
     'psas': {
-        'strokeColor':'#ff0000',
-        'fillColor': '#ff0000',
-        'fillOpacity': 0.1
+        'strokeColor':'#000000',
+        'fillColor': '#00b200',
+        'fillOpacity': 0.3
     },
     'polygon': {
         'strokeColor':'#008000',
@@ -259,7 +304,24 @@ styles_ftLayers = {
         'strokeColor':'#008000',
         'fillColor': '#008000',
         'fillOpacity': 0.1
-    }
+    },
+
+   /* 'statesb': {
+        'strokeColor':'#000000',
+        'fillColor': '#000000',
+        'fillOpacity': 0.1
+    },
+
+    'divisionsb': {
+        'strokeColor':'#0000ff',
+        'fillColor': '#0000ff',
+        'fillOpacity': 0.1
+    },
+    'phreats': {
+        'strokeColor':'#000000',
+        'fillColor': '#000000',
+        'fillOpacity': 0.1
+    }, */
 };
 
 //================
@@ -367,13 +429,16 @@ names_memcache = {
     'L7_SR':    {'NBRT':'L7_8day','default':'L7_daily'},
     'L7_TOA':   {'NBRT':'L7_8day','default':'L7_daily'},
     'L8_SR':    {'NBRT':'L8_SR','default':'L8_SR'},
+
+    'NVET':    {'default':'NVET'},
+
     'L8_TOA':   {'NBRT':'L8_8day','default':'L8_daily'},
     'L_TOA':    {'default':'L_daily'},
     'L_SR':     {'default':'L_daily'},
     'M':        {'Fractional_Snow_Cover':'MODIS_16day','LST_Day_1km':'MODIS_8day','default':'MODIS_16day'}
 }
 //these are the variable names above that do not have the default values
-names_notdefault={'Fractional_Snow_Cover':'','LST_Day_1km':'','NBRT':''}
+names_notdefault={'Fractional_Snow_Cover':'','LST_Day_1km':'','NBRT':'','NVET':''}
 
 maxDates_lookup={
     'G':             'maxDate_G',
@@ -387,6 +452,9 @@ maxDates_lookup={
     'L7_daily':      'maxDate_LANDSAT7_daily',
     'L8_daily':      'maxDate_LANDSAT8_daily',
     'L8_SR':         'maxDate_L8_SR',
+
+    'NVET':          'maxDate_NVET',
+
     'L5_8day':       'maxDate_LANDSAT5_8day',
     'L7_8day':       'maxDate_LANDSAT7_8day',
     'L8_8day':       'maxDate_LANDSAT8_8day',

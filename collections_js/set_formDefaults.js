@@ -6,6 +6,10 @@ function get_defaultStatistic(product,variable){
        }else{
 	    statistic ='Mean';
        };
+       if(applicationName == 'nevadaet'){
+	    statistic ='Mean';
+       }
+	
 	return statistic;
 };
 
@@ -30,6 +34,9 @@ function get_StatisticList(product,variable){
        if(tempList.indexOf(variable)!=-1){
 		var StatisticList = window.multStatistics;
 	}else{
+		var StatisticList = window.addStatistics;
+	}
+	if(applicationName == 'nevadaet' || product == 'NVET'){
 		var StatisticList = window.addStatistics;
 	}
 	return StatisticList;

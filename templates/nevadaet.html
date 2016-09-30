@@ -4,9 +4,9 @@
 		 {% include 'nevadaet/head.html'%}
                  <script type="text/javascript" src="collections_js/dataStore_appSpecific.js"></script>
                 {% include 'includes/basicscripts.html'%}
-                <script type="text/javascript" src="FEWSNET/scripts/dataStore_FEWSNET.js"></script>
-                <script type="text/javascript" src="FEWSNET/scripts/dataStore_CHIRPS.js"></script>
-                 <link href="/media/css/simple-sidebar_FEWSNET.css" rel="stylesheet">
+                <script type="text/javascript" src="nevadaet/scripts/dataStore_FEWSNET.js"></script>
+                <script type="text/javascript" src="FEWSNET/scripts/dataStore_CHIRPS.js"></script> 
+                 <link href="/media/css/simple-sidebar_nevadaet.css" rel="stylesheet">
         </head>
 
         <body>
@@ -16,10 +16,22 @@
                     <ul class="sidebar-nav">
 			<div class="visible-xs visible-sm hidden-md hidden-lg">
                                         <br>
-                          </div
-			<br><br><br><br>
-  			 {% include 'nevadaet/map_options.html'%}
-                        {% include 'nevadaet/timeseries_options_required.html'%}
+                          </div>
+			<br> <br><br>
+  			      {% include 'nevadaet/map_options.html'%}
+			
+                              {% include 'nevadaet/timeseries_options_required.html'%}
+		       <div class="accordion" id="accordionBUILDTIMESERIES"> 
+			 <div id="collapseBuildTimeSeriesOptions" class="accordion-body collapse 
+			    {% if timeSeriesTextData and dispEnv=='lg'%} in {% endif %}">
+      			   <div class="accordion-inner">
+	    			<div class="panel-body">
+					{% include 'includes/TS/timeseries_options_collapsible.html'%}
+	   			</div>
+			   </div><!-- end of accordion-inner-->
+   			 </div><!-- end of accordion-body -->
+		       </div> <!-- end of accordion-->
+
                     </ul>
                 </div>
            <div id="page-content-wrapper">

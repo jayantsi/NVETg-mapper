@@ -513,7 +513,7 @@ def get_landsat8_toa_collection(variable, logger=None):
 
     return collection, coll_name, coll_desc, var_desc, notes
 
-def get_landsat8_sr_collection(variable, logger=None):
+'''def get_landsat8_sr_collection(variable, logger=None):
     """Return the Landsat 8 at-surface reflectance image collection
 
     Args:
@@ -569,6 +569,69 @@ def get_landsat8_sr_collection(variable, logger=None):
         collection = collection.select(variable)
 
     return collection, coll_name, coll_desc, var_desc, notes
+'''
+
+def get_landsat8_sr_collection(variable, logger=None):
+    """Return the Landsat 8 at-surface reflectance image collection
+
+    Args:
+        variable: string indicating the variable/band to return
+            (NDVI, NDSI, NDWI, or EVI)
+    Returns:
+        EarthEngine image collection object
+        String of the collection name
+        String of the collection description
+        String of the input variable
+        String of additional notes about the collection
+    """
+    coll_name = 'LANDSAT/LC8_SR'
+    coll_desc = ('Landsat 8, at-surface reflectance daily {0} ' +
+                 '(Fmask cloud mask applied)').format(variable)
+    var_desc = variable
+    if logger:
+        ee_call = 'collection = ee.ImageCollection(' + coll_name + ')'
+        logger.info('EE CALL: ' + ee_call)
+
+    # Apply the Fmask cloud mask before renaming the bands
+    # Rename bands to common band names
+    collection = ee.ImageCollection(coll_name)
+    collection = collection.map(landsat8_sr_band_func)
+    collection = collection.map(landsat_fmask_cloud_mask_func)
+    
+    if variable == 'ET':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'EVI':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ET *':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ET-UCI':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ET-LCI':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ETg':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ETg-UCI':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'ETg-LCI':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_evi_func)
+    elif variable == 'PPT':
+        notes = "EVI calculated from Near-IR, Red and Blue bands"
+        collection = collection.map(landsat_ndwi_func)
+    else:
+        notes = ''
+        collection = collection.select(variable)
+
+    return collection, coll_name, coll_desc, var_desc, notes
+
+
 
 #===========================================
 #    LANDSAT FUNCTIONS
@@ -786,3 +849,4 @@ def landsat_false_color_func(img):
     """Calculate false color for a daily Landsat 4, 5, 7, or 8 image"""
     return ee.Image(img.select(['nir', 'red', 'green']))\
         .copyProperties(img, property_list)
+

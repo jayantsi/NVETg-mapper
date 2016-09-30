@@ -97,9 +97,7 @@ Here you can either look at a point location or you can look at an area-average 
             <li id="product1tabtoggle" class="active">
                 <a href="#product1tab" data-toggle="tab">Variable 1</a>
             </li>
-            <li id="product2tabtoggle" class="twoproducts" {% if variable2display=='none'%}style="display:none" {% endif %}>
-                <a href="#product2tab" data-toggle="tab">Variable 2</a>
-            </li>
+            
         </ul>
 
         <div class="tab-content">
@@ -108,12 +106,6 @@ Here you can either look at a point location or you can look at an area-average 
 		<!-- ******************** -->
                 <div class="tab-pane active"  id="product1tab">
                         {% include 'includes/TS/product1.html'%}
-                </div>
-		<!-- ******************** -->
-                <!--   PRODUCT 2         -->
-		<!-- ******************** -->
-                <div class="tab-pane"  id="product2tab">
-                        {% include 'includes/TS/product2.html'%}
                 </div>
 	</div><!--end tab-content-->
 </div><!--end tabble-->

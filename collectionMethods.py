@@ -6,6 +6,7 @@ import collection_MODIS
 import collection_MACA
 import collection_NASANEX
 import collection_PFV52
+import collection_NVET
 
 #===========================================
 #    GET_COLLECTION
@@ -15,9 +16,9 @@ def get_collection(product, variable, model, scenario, frequency, logger=None):
 
     Args:
         product: single character indicating the product
-            (i.e. G, M, L_TOA, L_SR, CHIRPS, or CFSR)
+            (i.e. G, M, L_TOA, L_SR, CHIRPS, or CFSR) nvet
         variable: string indicating the variable/band to return
-            (i.e. NDVI, EVI, pet, tmmn)
+            (i.e. NDVI, EVI, pet, tmmn) et*
     Returns:
         Output from product collection functions
         Tuple of the following:
@@ -55,6 +56,11 @@ def get_collection(product, variable, model, scenario, frequency, logger=None):
     elif product == 'L8_SR':
         return collection_LANDSAT.get_landsat8_sr_collection(
             variable, logger=logger)
+
+    elif product == 'NVET':
+        return collection_NVET.get_NVET_collection(
+            variable, logger=logger)
+
     elif product == 'CHIRPS':
         return collection_CHIRPS.get_chirps_collection(variable, logger=logger)
     elif product == 'CFSV2':

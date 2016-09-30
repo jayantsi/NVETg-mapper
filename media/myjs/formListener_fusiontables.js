@@ -256,8 +256,8 @@
 
 	    //wondering if we should add an option under datastore for fusion table
 	    //for the label here
-            if ($('#ftChoice'+String(ft_id)).val() == 'states'){
-                var myString = '<option value="">Choose a state!</option>';
+            if ($('#ftChoice'+String(ft_id)).val() == 'Phreatophyte areas'){
+                var myString = '<option value="">Choose a region!</option>';
             }
             else if ($('#ftChoice'+String(ft_id)).val() == 'zumwaltforage'){
                 var myString = '<option value="">Choose a landowner + pasture</option>';
@@ -305,7 +305,7 @@
         }, // anon function
 		error:function(){
 			status=false;
-               	        $('#buttonmessage'+String(ft_id)).html('<span style="color:red">Loading Failed</span>');
+               	        $('#buttonmessage'+String(ft_id)).html('<span style="color:green">Loading Failed</span>');
 		},
         }); // ajax
 		return status;

@@ -23,8 +23,16 @@ formMask=[
 formProductType=[
     ('RS','Remote Sensing'),
     ('MET','Historical Meteorology'),
-    #('CLIMATE','Climate'),
+    ('CLIMATE','Climate'),
 ]
+
+#============================
+#    formProductType1
+#============================
+formProductType1=[
+    ('RS','Remote Sensing')
+]
+
 
 #============================
 #    formSeasons
@@ -147,15 +155,33 @@ formColorbarType=[
 #============================
 formLayers=[
     ('custommaplayer','Map Layer'),
-    ('states','US States'),
-    ('counties','US Counties'),
+    ('states','State boundary'),
+    #('counties','US Counties'),
     #('hucoverlayer','US HUC 8'),  //can't get this in fusion tables because it's too big
-    ('divisions','US Climate Div.'),
-    ('psas','US PSAs'),
+    ('divisions','Hydrographic areas'),
+    ('psas','Phreatophyte areas'),
+
+   # ('statesb','State boundary'),
+   # ('divisionsb','Hydrographic areas'),
+   # ('phreats','Phreatophyte areas'),
+
     ('kmloverlayer','URL for .KML/.KMZ'),
     ('kmloverlayer2','URL for .KML/.KMZ'),
     #('combined_nvphreats' 'phreats')
 ]
+
+
+#============================
+#    formLayers1
+#============================
+'''formLayers1=[
+    ('custommaplayer','Map Layer'),
+    ('statesb','State boundary'),	#states
+    ('divisionsb','Hydrographic areas'),  #divisions 
+    ('phreats','Phreatophyte areas'),	#psas
+    ('kmloverlayer','URL for .KML/.KMZ'),
+]'''
+
 
 #============================
 #    formTimeSeriesCalc
@@ -191,11 +217,11 @@ formSubDomainTypeTS=[
 ]
 
 formFusionTableChoices=[
-    ('states','States'),
-    ('counties','Counties'),
-    ('divisions','Climate Divisions'),
-    ('psas','Predictive Service Areas (PSAs)'),
-    ('polygon','Polygon'),
+    #('states','State boundary'),
+    #('counties','Counties'),
+    #('divisions','Hydrographic areas'),
+    ('psas','Phreatophyte areas'),
+    ('polygon','Custom Polygon'),
     ('custom','Fusion Table'),
     #('phreats','combined_nvphreats')
 ]
@@ -296,6 +322,7 @@ formPaletteDivMap=[
     ('invRdGy','Grey-Red'),
     ('Spectral','Spectral'),
 ]
+
 formPaletteCustomMap=[
     #('USDM','USDM White-Red'),  #don't have 11 colors for these.. so deleting these off
     #('invUSDM','USDM Red-White'),

@@ -98,7 +98,7 @@
 .slider.slider-vertical .slider-tick.triangle,
 .slider.slider-vertical .slider-handle.triangle {
   border-width: 10px 0 10px 10px;
-  width: 1px;
+  width: 5px;
   height: 1px;
   border-left-color: #0480be;
   margin-left: 0;

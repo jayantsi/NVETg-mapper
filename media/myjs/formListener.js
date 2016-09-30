@@ -554,7 +554,7 @@
         var startDate = new Date();
 	    monthStart = $('#monthStart').val()
 	    dayStart = $('#dayStart').val()
-	    startDate = String(yearEnd)+'-'+String(monthStart)+'-'+String(dayStart);
+	    startDate = String(yearEnd)+'-'+String('01')+'-'+String('01');
 	    if(Date.parse(todayDate)<Date.parse(startDate)){
 		    yearEnd = yearEnd-1;
 	    }

@@ -24,6 +24,9 @@ defaults_yearClim = {
     'L7_SR':    {'yearStartClim':'1999','yearEndClim':'default','yearTarget':'2014'},
     'L7_TOA':   {'yearStartClim':'1999','yearEndClim':'default','yearTarget':'2014'},
     'L8_SR':    {'yearStartClim':'2013','yearEndClim':'default','yearTarget':'2014'},
+
+    'NVET':     {'yearStartClim':'2001','yearEndClim':'default','yearTarget':'2014'},
+
     'L8_TOA':   {'yearStartClim':'2013','yearEndClim':'default','yearTarget':'2014'},
     'L_TOA':    {'yearStartClim':'1982','yearEndClim':'default','yearTarget':'2014'},
     'L_SR':     {'yearStartClim':'1982','yearEndClim':'default','yearTarget':'2014'},
@@ -44,6 +47,9 @@ default_maxDateCalc = [
     ['L7_daily', ('LANDSAT/LE7_L1T_TOA', 'B5', 'L7_TOA')],
     ['L8_8day', ('LANDSAT/LC8_L1T_8DAY_NBRT', 'NBRT', 'L8_TOA')],
     ['L8_SR', ('LANDSAT/LC8_SR', 'B5', 'L8_SR')],
+
+    ['NVET', ('users/vedagaya3/nv_asset', 'ETg', 'NVET')],
+
     ['L8_daily', ('LANDSAT/LC8_L1T_TOA', 'B5', 'L8_TOA')],
     ['L_daily', ('LANDSAT/LC8_L1T_TOA', 'B5', 'L_TOA')],
     ['MODIS_16day', ('MODIS/MCD43A4_NDVI', 'NDVI', 'M')],
@@ -66,6 +72,9 @@ names_memcache = {
     'L7_SR':    {'NBRT':'L7_8day','default':'L7_daily'},
     'L7_TOA':   {'NBRT':'L7_8day','default':'L7_daily'},
     'L8_SR':    {'NBRT':'L8_8day','default':'L8_daily'},
+
+    'NVET':     {'default':'NVET'},
+
     'L8_TOA':   {'NBRT':'L8_8day','default':'L8_daily'},
     'L8_daily': {'NBRT':'L_8day','default':'L8_SR'},
     'L_TOA':    {'NBRT':'L_8day','default':'L_daily'},
@@ -88,6 +97,9 @@ maxDates_lookup={
     'L7_daily':'maxDate_LANDSAT7_daily',
     'L8_daily':'maxDate_LANDSAT8_daily',
     'L8_SR':'maxDate_L8_SR',
+
+    'NVET':'maxDate_NVET',
+
     'L5_8day':'maxDate_LANDSAT5_8day',
     'L7_8day':'maxDate_LANDSAT7_8day',
     'L8_8day':'maxDate_LANDSAT8_8day',
@@ -106,6 +118,9 @@ defaults_maxDates={
     'L8_8day':     '2016-04-30',
     'L_8day':      '2016-04-30',
     'L8_SR':       '2015-12-31',
+    
+    'NVET':        '2016-01-01',
+
     'L8_daily':    '2016-05-02',
     'L_daily':     '2016-05-02',
     'MODIS_16day': '2016-04-14',
@@ -170,6 +185,10 @@ def maxDateWorker(coll_name, variable, product, t_idx, maxDates):
                 maxDate = datetime.datetime.strptime(image_id[9:16], '%Y%j')
         elif product == 'M':
             maxDate = datetime.datetime.strptime(image_id[12:22], '%Y_%m_%d')
+
+        elif product == 'NVET':
+            maxDate = datetime.datetime.strptime(image_id[12:22], '%Y_%m_%d')
+
         elif product == 'CHIRPS':
             # CHIRPS wants end of month reported
             # Use calendar.monthrange to get number of days in month

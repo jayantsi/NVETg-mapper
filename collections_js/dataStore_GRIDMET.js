@@ -58,22 +58,22 @@ addToDict1(scaleListList,temp);
 // VARIABLESGRIDMET
 //==========================
 var VariablesGridmet={
-    //'dps':'DPS (Dew Point Temperature)',
-    //'bi':'BI (Burning Index)',
-    //'erc':'ERC (Energy Release Component)',
-    //'fm100':'FM100 (100-HR Dead Fuel Moisture)',
-    //'fm1000':'FM1000 (1000-HR Dead Fuel Moisture)',
+    'dps':'DPS (Dew Point Temperature)',
+    'bi':'BI (Burning Index)',
+    'erc':'ERC (Energy Release Component)',
+    'fm100':'FM100 (100-HR Dead Fuel Moisture)',
+    'fm1000':'FM1000 (1000-HR Dead Fuel Moisture)',
     'pet':'ETg (Ground water Evapotranspiration)',
-    //'pdsi':'PDSI (Palm. Drought Sev. Ind.)',
+    'pdsi':'PDSI (Palm. Drought Sev. Ind.)',
     'pr':'PPT (Precipitation)',
-    //'wb':'PPT-ETo (Potential Water Deficit)',
-    //'rmin':'RMIN (Min Rel. Humidity)',
-    //'rmax':'RMAX (Max Rel. Humidity)',
-    //'sph':'SPH (Specific Humidity)',
-    //'srad':'SRAD (Downward Radiation)',
-    //'tmean':'TMEAN (Mean Temperature)',
-    //'tmmn':'TMIN (Min Temperature)',
-    //'tmmx':'TMAX (Max Temperature)',
+    'wb':'PPT-ETo (Potential Water Deficit)',
+    'rmin':'RMIN (Min Rel. Humidity)',
+    'rmax':'RMAX (Max Rel. Humidity)',
+    'sph':'SPH (Specific Humidity)',
+    'srad':'SRAD (Downward Radiation)',
+    'tmean':'TMEAN (Mean Temperature)',
+    'tmmn':'TMIN (Min Temperature)',
+    'tmmx':'TMAX (Max Temperature)',
     'vs':'EVI (Enhanced Vegetation Index)'
 }
 var temp = {

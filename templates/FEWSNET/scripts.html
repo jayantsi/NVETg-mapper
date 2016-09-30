@@ -157,8 +157,8 @@
 			/*********************************
                         *   ZOOM2 DROPDOWN MENU        *
                         *********************************/
-                        //var zoom2Control = document.getElementById("component_zoom2");
-                        //window.map.controls[google.maps.ControlPosition.TOP_LEFT].push(zoom2Control);
+                        var zoom2Control = document.getElementById("component_zoom2");
+                        window.map.controls[google.maps.ControlPosition.TOP_LEFT].push(zoom2Control);
 
 			/*******************************
 			*     MOUSEOVER EVENT -INFO BOX TO GET VALUE            *
@@ -175,7 +175,7 @@
 			/*********************************/
 			/*      BOUNDARY LAYERS  */
 			/*********************************/
-			{% include 'FEWSNET/js_map_fewskmlboundaries.html'%} //kml
+			{% include 'CLIMATEENGINE_EXPERT/js_map_kmlboundaries.html'%} //kml
 			 /*********************************
 			*      POINT MARKERS             *
 			*********************************/

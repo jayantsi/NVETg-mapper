@@ -52,10 +52,10 @@ def get_applicationDefaults(self, applicationName):
         timeSeriesCalc_default  = 'days'
         subDomainTypeTS_default = 'points'
         ftChoice1_default       = 'states'
-        variable_default        = 'pr'
-        productType_default     = 'MET'
-        product_default         = 'G'
-        statistic_default       = 'Total'
+        variable_default        = 'EVI'
+        productType_default     = 'RS'
+        product_default         = 'NVET'
+        statistic_default       = 'Mean'
         calculation_default     = 'value'
         units_default           = 'metric'
         varUnits_default        = 'mm'
@@ -78,8 +78,8 @@ def get_applicationDefaults(self, applicationName):
         NELong_default          = -95
         SWLat_default           = 40
         SWLong_default          = -111
-        minYear_default         = '1979'
-        minDate_default         = '1979-01-01'
+        minYear_default         = '2001'
+        minDate_default         = '2001-01-01'
         runningMeanYears_default= '5'
         runningMeanDays_default = '9'
         basemap_default         = 'hybrid'
